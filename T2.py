@@ -11,4 +11,12 @@ for i in range(0, n):
     # add users numbers to our empty list
     lst.append(ele)  # adding the element
 
-print(lst)
+lst1 = []
+
+
+for i in range(0, n):
+    ele_str = input("give 10 words please :")
+
+    lst1.append(ele_str)
+
+print(lst, lst1)
