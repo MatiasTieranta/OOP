@@ -1,5 +1,8 @@
+import random
+
 # empty list
-lst = []
+
+lst_numbers = []
 
 # lets set numbers of elements to list 10
 n = 10
@@ -9,14 +12,16 @@ for i in range(0, n):
     ele = int(input("Give 10 numbers please :"))
 
     # add users numbers to our empty list
-    lst.append(ele)  # adding the element
+    lst_numbers.append(ele)  # adding the element
 
-lst1 = []
-
+lst_strings = []
 
 for i in range(0, n):
     ele_str = input("give 10 words please :")
 
-    lst1.append(ele_str)
+    lst_strings.append(ele_str)
 
-print(lst, lst1)
+
+randomlist = random.sample(range(0, 1000), 10)
+
+print(lst_numbers, lst_strings, randomlist)
