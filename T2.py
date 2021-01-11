@@ -21,7 +21,9 @@ for i in range(0, n):
 
     lst_strings.append(ele_str)
 
-
 randomlist = random.sample(range(0, 1000), 10)
 
+lst_numbers.sort()
+randomlist.sort()
+lst_strings.sort()
 print(lst_numbers, lst_strings, randomlist)
