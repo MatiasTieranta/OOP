@@ -1,23 +1,31 @@
 import random
 
+even_count = 0
+divided_by_three = 0
+
 # empty list
 
-lst_numbers = []
-lst_numbers_negative = []
-
+numbers = []
+numbers_negative = []
+Divided_by = 3
 # lets set numbers of elements to list 10
 n = 10
 
 # aks to user fill 10 numbers
 for i in range(0, n):
-    ele = int(input("Give 10 numbers please :"))
-    if ele == 0:
+    x = int(input("Give 10 numbers please :"))
+    if x == 0:
         break
-    elif ele < 0:
-        lst_numbers_negative.append(ele)
+    elif x < 0:
+        numbers_negative.append(x)
+    elif x % 2 == 0:
+        even_count = even_count + 1
+    elif x % 3 == 0:
+        sum += x
 
-    # add users numbers to our empty list
-    lst_numbers.append(ele)  # adding the element
+
+# add users numbers to our empty list
+    numbers.append(x)  # adding the element
 
 lst_strings = []
 
@@ -28,9 +36,13 @@ for i in range(0, n):
 
 randomlist = random.sample(range(0, 1000), 10)
 
-lst_numbers.sort()
+sum_of_list = sum(numbers)
+numbers.sort()
 randomlist.sort()
 lst_strings.sort()
 
-print(lst_numbers, lst_strings, randomlist, lst_numbers_negative)
+print(numbers, lst_strings, randomlist, numbers_negative)
+print("Even count in the lists are : ", even_count)
+print("Numbers in list divided of three  :",)
+
 
