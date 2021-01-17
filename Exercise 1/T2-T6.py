@@ -8,7 +8,7 @@ divided_by_three = 0
 
 numbers = []
 numbers_negative = []
-Divided_by = 3
+
 # lets set numbers of elements to list 10
 n = 10
 
