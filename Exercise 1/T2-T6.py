@@ -3,6 +3,7 @@ import random
 even_count = 0
 divided_by_three = 0
 
+
 # empty list
 
 numbers = []
@@ -16,12 +17,12 @@ for i in range(0, n):
     x = int(input("Give 10 numbers please :"))
     if x == 0:
         break
-    elif x < 0:
+    if x < 0:
         numbers_negative.append(x)
-    elif x % 2 == 0:
+    if x % 2 == 0:
         even_count = even_count + 1
-    elif x % 3 == 0:
-        sum += x
+    if x % 3 == 0:
+        divided_by_three += x
 
 
 # add users numbers to our empty list
@@ -43,6 +44,4 @@ lst_strings.sort()
 
 print(numbers, lst_strings, randomlist, numbers_negative)
 print("Even count in the lists are : ", even_count)
-print("Numbers in list divided of three  :",)
-
-
+print("Numbers in list divided of three  :", divided_by_three)
