@@ -1,19 +1,24 @@
+# File name: Task 2 - 6 of exercise 1
+# Author: Matias Tieranta
+# Description: Tasks to 2 - 6
+
+
 import random
 
 even_count = 0
 divided_by_three = 0
 
-# empty list
+# Lets create empty list
 
 numbers = []
 numbers_negative = []
-lst_strings = []
+list_of_words = []
 
-# lets set numbers of elements to list 10
-n = 10
+# lets set numbers of elements to list to ten
+max_amount_of_elements = 10
 
-# aks to user fill 10 numbers
-for i in range(0, n):
+# ask's to user fill 10 numbers
+for i in range(0, max_amount_of_elements):
     x = int(input("Give 10 numbers please :"))
     if x == 0:
         break
@@ -27,18 +32,22 @@ for i in range(0, n):
     # add users numbers to our empty list
     numbers.append(x)  # adding the element
 
-for i in range(0, n):
-    ele_str = input("give 10 words please :")
+# asks to user fill 10 words
+for i in range(0, max_amount_of_elements):
+    word = input("give 10 words please :")
+    # add users word to our empty list
+    list_of_words.append(word)
 
-    lst_strings.append(ele_str)
+# Creates ten random numbers between 0-1000
+random_list_of_numbers = random.sample(range(0, 1000), 10)
 
-randomlist = random.sample(range(0, 1000), 10)
-
+# sorts elements in list
 sum_of_list = sum(numbers)
 numbers.sort()
-randomlist.sort()
-lst_strings.sort()
+random_list_of_numbers.sort()
+list_of_words.sort()
 
-print(numbers, lst_strings, randomlist, numbers_negative)
+# Prints out everything
+print(numbers, list_of_words, random_list_of_numbers, numbers_negative)
 print("Even count in the lists are : ", even_count)
 print("Numbers in list divided of three  :", divided_by_three)
