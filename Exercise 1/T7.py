@@ -1,15 +1,30 @@
-
 # Series Using Math Formula
 
 # Take the Input from the User
-first_Num = int(input("Enter First Number of an A.P Series: "))
+first_Num = 0
 Total_num = int(input("Enter the Total Numbers in this A.P Series: "))
-diff = int(input("Enter the Common Difference: "))
+diff = 2
 
-# Calculation
-total = (Total_num * (2 * first_Num + (Total_num - 1) * diff)) / 2
-tn = first_Num + (Total_num - 1) * diff
+#
+def term():
+    return Total_num // diff
 
-# Print the Output
-print("\nThe Sum of Arithmetic Progression Series = " , total)
-print("The tn Term of Arithmetic Progression Series = " , tn)
+
+def sum_of_terms():
+    terms_sum = 0
+    for i in range(first_Num, Total_num, diff):
+        terms_sum += i
+    return terms_sum
+
+
+def squared_sum_of_terms():
+    terms_sum = 0
+    for i in range(first_Num, Total_num, diff):
+        terms_sum += i ** 2
+    return terms_sum
+
+
+print(term())
+print(sum_of_terms())
+print(squared_sum_of_terms())
+
