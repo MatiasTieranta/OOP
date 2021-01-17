@@ -3,11 +3,11 @@ import random
 even_count = 0
 divided_by_three = 0
 
-
 # empty list
 
 numbers = []
 numbers_negative = []
+lst_strings = []
 
 # lets set numbers of elements to list 10
 n = 10
@@ -24,11 +24,8 @@ for i in range(0, n):
     if x % 3 == 0:
         divided_by_three += x
 
-
-# add users numbers to our empty list
+    # add users numbers to our empty list
     numbers.append(x)  # adding the element
-
-lst_strings = []
 
 for i in range(0, n):
     ele_str = input("give 10 words please :")

@@ -5,6 +5,7 @@ first_Num = 0
 Total_num = int(input("Enter the Total Numbers in this A.P Series: "))
 diff = 2
 
+
 #
 def term():
     return Total_num // diff
@@ -27,4 +28,3 @@ def squared_sum_of_terms():
 print(term())
 print(sum_of_terms())
 print(squared_sum_of_terms())
-
