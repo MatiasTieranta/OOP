@@ -50,4 +50,4 @@ list_of_words.sort()
 # Prints out everything
 print(numbers, list_of_words, random_list_of_numbers, numbers_negative)
 print("Even count in the lists are : ", even_count)
-print("Sum of numbers in list divisible by three :", divided_by_three)
+print("Sum of numbers divisible by three :", divided_by_three)
