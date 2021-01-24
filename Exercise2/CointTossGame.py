@@ -1,11 +1,7 @@
-# File: Example
+# File: CoinTossingGame
 # Author: Matias
 # Description: Flipping coin game
-
-
 import random
-
-
 class Coin:
 
     # The__init__ method initializes the sideup data attribute with 'Heads'
