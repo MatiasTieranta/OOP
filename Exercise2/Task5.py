@@ -23,4 +23,4 @@ Grades = X + Y + Z + Q + W
 avg_of_grades = Grades // 5
 
 # Prints out average
-print(avg_of_grades)
+print("average of the class is :" ,avg_of_grades)
