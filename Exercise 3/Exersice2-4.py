@@ -52,6 +52,8 @@ class Coin:
     def get_currency(self):
         return self.__currency
 
+    def set_currency(self, currency):
+        self.__currency = currency
 
 # The main function
 
@@ -72,6 +74,9 @@ def main():
 
     # Display the side of the coin that is facing up.
     print('This side is up: ', my_coin.get_sideup())
+
+    my_coin.set_currency('Swedish krona')
+    print("Currency is :", my_coin.get_currency())
 
 
 # Call the main function.
