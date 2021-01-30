@@ -13,7 +13,7 @@ class Dice:
         self.__colour = 'Orange'
 
     # The toss method generate a random number
-    # int the range 1 to 6. If the number
+    # int the range 0 to 6. If the number
     # 1, then sideup is set to 'Orange and number One'
     # if 2 sideup is set to 'Black and number Two'
     # if 3 sideup is set to 'White and number Three'
@@ -38,7 +38,7 @@ class Dice:
         elif toss_result == 6:
             self.__colour = 'Red'
         elif toss_result == 0:
-            print('Where did that dice even go we need to start again...')
+            print('Where did that dice even go ?? we need to start again...')
             self.__colour = None
     # The get_sideup method return the value referenced by sideup
 
