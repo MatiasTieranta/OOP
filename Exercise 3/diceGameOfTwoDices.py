@@ -4,6 +4,8 @@
 
 import random
 
+lst = []
+
 
 class Dice:
 
@@ -59,6 +61,9 @@ class Dice:
     def get_sideup(self):
         return self.__sideup
 
+    def get_colour(self):
+        return self.__colour
+
 
 # The main function
 
@@ -70,14 +75,18 @@ def main():
     # Toss the dice
     print("Im tossing first dice...")
     my_dice.toss_number1()
-    print(my_dice.get_sideup())
+
+
+    print(my_dice.get_sideup(), my_dice.get_colour())
+    lst.append(my_dice.get_sideup())
 
     print("Im tossing second dice")
     my_dice.toss_number2()
-    print(my_dice.get_sideup())
 
-    # Display the side of the dice that is facing up.
-    print('Sum of dices :')
+    print(my_dice.get_sideup(),my_dice.get_colour())
+    lst.append(my_dice.get_sideup())
+
+    print("Sum of two dices :", sum(lst))
 
 
 # Call the main function.
