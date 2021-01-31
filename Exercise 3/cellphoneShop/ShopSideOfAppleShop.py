@@ -1,6 +1,6 @@
-# File: ShopSideOfAppleShop
+# File: ShopSideOfAppleShop.py
 # Author: Matias Tieranta
-# Description: The BankAccount class simulates a bank account
+# Description: The BankAccount class simulates a shop side of apple shop
 
 
 class Cellphone:

@@ -1,6 +1,6 @@
-# File:diceTossingGameOfTwoDices
+# File:diceTossingGame
 # Author: Matias
-# Description: diceGame of two dices and sum of those in end
+# Description: diceGame
 
 import random
 
@@ -13,7 +13,7 @@ class Dice:
     def __init__(self):
         self.__sideup = '1'
         self.__colour = 'Orange'
-    # Created two of dices
+
     # The toss method generate a random number
     # int the range 0 to 6. If the number
     # 1, then sideup is set to 'Orange and number One'
@@ -22,9 +22,9 @@ class Dice:
     # if 4 sideup is set to 'Pink and number Four'
     # if 5 sideup is set to 'Turquoise and number five'
     # if 6 sideup is set to 'Red and number Six'
-    # Sum of dices in end
+    # As a extra feature we can also lose our dice and its set to 'zero and none'
 
-    def toss_number1(self):
+    def Player1(self):
         toss_result1 = random.randint(1, 6)
         self.__sideup = toss_result1
         if toss_result1 == 1:
@@ -40,7 +40,23 @@ class Dice:
         elif toss_result1 == 6:
             self.__colour = 'Red'
 
-    def toss_number2(self):
+    def Player2(self):
+        toss_result2 = random.randint(1, 6)
+        self.__sideup = toss_result2
+        if toss_result2 == 1:
+            self.__colour = 'Orange'
+        elif toss_result2 == 2:
+            self.__colour = 'Black'
+        elif toss_result2 == 3:
+            self.__colour = 'White'
+        elif toss_result2 == 4:
+            self.__colour = 'Pink'
+        elif toss_result2 == 5:
+            self.__colour = 'Turquoise'
+        elif toss_result2 == 6:
+            self.__colour = 'Red'
+
+    def Player3(self):
         toss_result2 = random.randint(1, 6)
         self.__sideup = toss_result2
         if toss_result2 == 1:
@@ -73,19 +89,23 @@ def main():
     my_dice = Dice()
 
     # Toss the dice
-    print("Im tossing first dice...")
-    my_dice.toss_number1()
+    print("Player one is tossing the dice...")
+    my_dice.Player1()
 
     print(my_dice.get_sideup(), my_dice.get_colour())
     lst.append(my_dice.get_sideup())
 
-    print("Im tossing second dice")
-    my_dice.toss_number2()
+    print("Player two is tossing the dice...")
+    my_dice.Player2()
 
     print(my_dice.get_sideup(), my_dice.get_colour())
     lst.append(my_dice.get_sideup())
 
-    print("Sum of two dices :", sum(lst))
+    print("Player three is tossing the dice...")
+    my_dice.Player3()
+
+    print(my_dice.get_sideup(), my_dice.get_colour())
+    lst.append(my_dice.get_sideup())
 
 
 # Call the main function.

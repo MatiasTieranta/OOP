@@ -6,7 +6,7 @@ import random
 
 class Coin:
 
-    # The__init__ method initializes the sideup data attribute with 'Heads'
+    # The__init__ method initializes the sideup data attribute with 'Heads' and 'euros'
     def __init__(self):
         self.__sideup = 'Heads'
         self.__currency = 'Euro'
@@ -31,6 +31,7 @@ class Coin:
         elif toss_result == 3:
             self.__sideup = 'Oh no you missed the table'
 
+    # Task 2 to add some currency's
     def toss_currency(self):
         toss_result = random.randint(0, 4)
         if toss_result == 0:
@@ -45,6 +46,7 @@ class Coin:
             self.__currency = 'Yen'
 
     # The get_sideup method return the value referenced by sideup
+    # Task 4 to add self.sideup to private self.__sideup done here!
 
     def get_sideup(self):
         return self.__sideup
@@ -54,6 +56,7 @@ class Coin:
 
     def set_currency(self, currency):
         self.__currency = currency
+
 
 # The main function
 
@@ -74,6 +77,8 @@ def main():
 
     # Display the side of the coin that is facing up.
     print('This side is up: ', my_coin.get_sideup())
+
+    # Task 3 Add a method that can change the currency of the coin.
 
     my_coin.set_currency('Swedish krona')
     print("Currency is :", my_coin.get_currency())

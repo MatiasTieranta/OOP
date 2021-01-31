@@ -1,6 +1,6 @@
-# File: accountTest_demo.py
+# File: UserSideOfAppleShop.py
 # Author: Matias Tieranta
-# Description_: This program demonstrates the BankAccount class
+# Description_: This program demonstrates the user side of apple shop class
 
 import ShopSideOfAppleShop
 
@@ -18,8 +18,8 @@ def main():
     # Create a BankAccount object.
     phoneSpecs = ShopSideOfAppleShop.Cellphone(retail_price, manufacturer, model)
 
-    # Display the balance
-    print(phoneSpecs)
+    # Display the specs of phone
+    print('Here is the data that you provided : ', phoneSpecs)
 
 
 main()
