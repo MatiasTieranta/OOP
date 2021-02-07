@@ -28,17 +28,17 @@ class Cellphone:
     def get_model(self):
         return self.model
 
-    def get_if(self):
+    def get_id(self):
         return self.id
 
     def set_id(self):
         return self.id
 
     def get_batterysize(self):
-        return self.__batterysize
+        return self.__battery
 
     def set_batterysize(self):
-        return self.__batterysize
+        return self.__battery
 
     def get_camera(self):
         return self.__camera

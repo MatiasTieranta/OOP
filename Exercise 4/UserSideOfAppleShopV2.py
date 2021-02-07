@@ -23,6 +23,7 @@ def main():
     phoneSpecs = ShopSideOfAppleShopV2.Cellphone(retail_price, manufacturer, model, camera, battery)
 
     # Display the specs of phone
+
     print('Here is the data that you provided : ', phoneSpecs)
 
 
