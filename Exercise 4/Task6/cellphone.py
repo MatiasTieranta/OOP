@@ -1,6 +1,6 @@
 # File: ShopSideOfAppleShop.py
 # Author: Matias Tieranta
-# Description: The BankAccount class simulates a shop side of apple shop
+# Description: The Cellphone class simulates a shop side of apple shop
 
 
 class Cellphone:
@@ -19,14 +19,25 @@ class Cellphone:
     def get_balance(self):
         return self.__retailprice
 
-    # The get_owner1 method returns the manufacturer of phone
+    def set_baZlance(self):
+        return self.__retailprice
+
+    # The get_manufacturer method returns the manufacturer of phone
     def get_manufacturer(self):
         return self.manufacturer
 
-    # The get_owner2 method returns the model of phone
+    def set_manufacturer(self):
+        return self.manufacturer
+
+    # The get_model method returns the model of phone
 
     def get_model(self):
         return self.model
+
+    def set_model(self):
+        return self.model
+
+    # The get_id method returns the id of phone
 
     def get_id(self):
         return self.id
@@ -34,11 +45,15 @@ class Cellphone:
     def set_id(self):
         return self.id
 
+    # The get_batterysize method returns the batterysize of phone
+
     def get_batterysize(self):
         return self.__battery
 
     def set_batterysize(self):
         return self.__battery
+
+    # The get_camera method returns the id of phone
 
     def get_camera(self):
         return self.__camera
@@ -54,5 +69,3 @@ class Cellphone:
         \ncamera has {self.__camera}pixels
         \npixels battery size is : {self.__battery}mh 
         \nid of product: {self.id}'''
-
-
