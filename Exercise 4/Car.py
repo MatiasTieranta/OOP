@@ -14,7 +14,7 @@ class Car:
         self.__size_of_trunk = size_of_trunk
         self.id = 1
 
-        # The get_balance method returns retail price.
+        # The get_make method returns maker.
 
     def get_make(self):
         return self.__make
@@ -22,7 +22,7 @@ class Car:
     def set_make(self):
         return self.__make
 
-        # The get_owner1 method returns the manufacturer of phone
+        # The get_model method returns the model of car
 
     def get_model(self):
         return self.__model
@@ -30,7 +30,7 @@ class Car:
     def set_model(self):
         return self.__model
 
-    # The get_balance method returns retail price.
+    # The get_mileage method returns mileage.
 
     def get_mileage(self):
         return self.__mileage
@@ -38,7 +38,7 @@ class Car:
     def set_mileage(self):
         return self.__mileage
 
-    # The get_balance method returns retail price.
+    # The get_price returns price of car.
 
     def get_price(self):
         return self.__price
@@ -46,7 +46,7 @@ class Car:
     def set_price(self):
         return self.__price
 
-    # The get_balance method returns retail price.
+    # The get_colour method returns colour.
 
     def get_colour(self):
         return self.__colour
@@ -54,7 +54,7 @@ class Car:
     def set_colour(self):
         return self.__colour
 
-    # The get_balance method returns retail price.
+    # The get_maxium_load_limit returns maxium load limit.
 
     def get_maxium_load_limit(self):
         return self.__maxium_load_limit
@@ -62,7 +62,7 @@ class Car:
     def set_maxium_load_limit(self):
         return self.__maxium_load_limit
 
-    # The get_balance method returns retail price.
+    # The get_size of trunk method returns size of trunk.
 
     def get_size_of_trunk(self):
         return self.__size_of_trunk
