@@ -16,15 +16,6 @@ class newPhone:
 
         # The toss method generate a random number
 
-    # int the range 0 to 6. If the number
-    # 1, then sideup is set to 'Orange and number One'
-    # if 2 sideup is set to 'Black and number Two'
-    # if 3 sideup is set to 'White and number Three'
-    # if 4 sideup is set to 'Pink and number Four'
-    # if 5 sideup is set to 'Turquoise and number five'
-    # if 6 sideup is set to 'Red and number Six'
-    # As a extra feature we can also lose our dice and its set to 'zero and none'
-
     def toss_number(self):
         toss_result = random.randint(1, 6)
         if toss_result == 1:

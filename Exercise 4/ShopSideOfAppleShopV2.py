@@ -1,11 +1,11 @@
 # File: ShopSideOfAppleShop.py
 # Author: Matias Tieranta
-# Description: The BankAccount class simulates a shop side of apple shop
+# Description: The Cellphone class simulates a shop side of apple shop
 
 
 class Cellphone:
 
-    # The __init__ method initializes retail prize, model and manufacturer
+    # The __init__ method initializes retail price, model and manufacturer, battery and camera and also id
 
     def __init__(self, retailprice, manufacturer, model, battery, camera):
         self.__retailprice = retailprice
@@ -19,14 +19,16 @@ class Cellphone:
     def get_balance(self):
         return self.__retailprice
 
-    # The get_owner1 method returns the manufacturer of phone
+    # The get_manufacturer method returns the manufacturer of phone
     def get_manufacturer(self):
         return self.manufacturer
 
-    # The get_owner2 method returns the model of phone
+    # The get_model method returns the model of phone
 
     def get_model(self):
         return self.model
+
+    # The get_model method returns the id of phone
 
     def get_id(self):
         return self.id
@@ -34,11 +36,15 @@ class Cellphone:
     def set_id(self):
         return self.id
 
+    # The get_batterysize method returns the battery size of phone
+
     def get_batterysize(self):
         return self.__battery
 
     def set_batterysize(self):
         return self.__battery
+
+    # The get_camera method returns the camera of phone
 
     def get_camera(self):
         return self.__camera
@@ -51,8 +57,8 @@ class Cellphone:
         return f'''manufacturer: {self.manufacturer}
         \nmodel: {self.model} 
         \nretailprice: {self.__retailprice}
-        \ncamera has {self.__camera}pixels
-        \npixels battery size is : {self.__battery}mh 
+        \ncamera has {self.__battery}pixels
+        \npixels battery size is : {self.__camera}mh 
         \nid of product: {self.id}'''
 
 
