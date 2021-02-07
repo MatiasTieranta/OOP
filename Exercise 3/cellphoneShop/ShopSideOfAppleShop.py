@@ -12,15 +12,15 @@ class Cellphone:
         self.manufacturer = manufacturer
         self.model = model
 
-    # The get_balance method returns retail price.
-    def get_balance(self):
+    # The get_price method returns retail price.
+    def get_price(self):
         return self.__retailprice
 
-    # The get_owner1 method returns the manufacturer of phone
+    # The get_manufacturer method returns retail price.
     def get_manufacturer(self):
         return self.manufacturer
-    # The get_owner2 method returns the model of phone
 
+    # The get_model method returns retail price.
     def get_model(self):
         return self.model
 

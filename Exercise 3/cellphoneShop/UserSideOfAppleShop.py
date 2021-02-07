@@ -15,11 +15,11 @@ def main():
     # Get the retailprice of phone
     retail_price = float(input('enter the retail price: '))
 
-    # Create a BankAccount object.
-    phoneSpecs = ShopSideOfAppleShop.Cellphone(retail_price, manufacturer, model)
+    # Create a phonespecs object.
+    phone_specs = ShopSideOfAppleShop.Cellphone(retail_price, manufacturer, model)
 
     # Display the specs of phone
-    print('Here is the data that you provided : ', phoneSpecs)
+    print('Here is the data that you provided : ', phone_specs)
 
 
 main()
