@@ -2,6 +2,7 @@
 # Author: Matias Tieranta
 # Description: Class named as Student including firstname, lastname and id and mammals
 
+# Creates class student, with given first name, last name, id and mammal
 
 class Student:
     def __init__(self, first_name, last_name, id, mammals):
@@ -9,7 +10,7 @@ class Student:
         self.__lastname = last_name
         self.__id = id
         self.__mammal = mammals
-
+# Adding accessor and mutator methods
     def get_firstname(self):
         return self.__firstname
 
@@ -34,6 +35,7 @@ class Student:
     def set_mammal(self, mammals):
         self.__mammal = mammals
 
+# Returns string
     def __str__(self):
         return f'''first name of student is : {self.__firstname}
         \nLast name of student is : {self.__lastname} 

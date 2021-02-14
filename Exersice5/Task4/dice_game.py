@@ -3,123 +3,97 @@
 # Description: Dice rolling game
 
 
-import Dice
+import students_mammals
+import pickle
+
+# Lets crate menu
+
+LOOK_UP = 1
+ADD = 2
+DISPLAY = 3
+QUIT = 4
 
 
-def make_list():
-    dice_list = []
-
-    for number in range(1, 4):
-        print('Dice ', number)
-
-        my_dice = Dice.Dice(number)
-
-        dice_list.append(my_dice)
-
-    return dice_list
-
-
-def display_list(dice_list):
-    for item in dice_list:
-        print()
-        print('Id', item.get_id())
-        print('Side', item.get_side())
-
-
-def roll_dices(dice_list):
-    for item in dice_list:
-        item.roll_dice()
-
-
-def get_side_list(dice_list):
-    side_list = []
-
-    for item in dice_list:
-        side_list.append(item.get_side())
-    return side_list
-
-
-def not_appended(continue_list, dice_object):
-    for i in range(len(continue_list)):
-        if dice_object == continue_list[i]:
-            return False
-
-    return True
-
-
-def check_tie(dice_list):
-    if range(len(dice_list) < 2):
-        return dice_list
-    else:
-
-        tied_list = []
-
-        side_list = get_side_list(dice_list)
-
-        for i in range(len(side_list)):
-            for j in range(i + 1, len(side_list)):
-
-                if side_list[i] == dice_list[j]:
-
-                    if not_appended(tied_list, dice_list[i]):
-                        tied_list.append(dice_list[i])
-                    if not_appended(tied_list, dice_list[j]):
-                        tied_list.append(dice_list[j])
-
-    return tied_list
-
-
-def drop_lowest(dice_list):
-    side_list = get_side_list(dice_list)
-
-    smallest = min(side_list)
-
-    for i in range(len(side_list)):
-        if smallest == side_list[i]:
-            dice_list.pop(i)
-    return dice_list
-
-
-def play_round(dices):
-    print("\nLets roll the dices. ")
-    roll_dices(dices)
-
-    print('\nSituation after first roll.')
-    display_list(dices)
-
-    tied_list = check_tie(dices)
-
-    while range(len(tied_list) > 1):
-        print('\nUups, there is a tie', get_side_list(tied_list))
-        roll_dices(tied_list)
-        tied_list = check_tie(dices)
-
-    print('\nIf there were ties, they are now cleared. Current situation')
-    display_list(dices)
-
-    print('\nNow we can drop the dice with lowest side')
-    dices = drop_lowest(dices)
-
-    print('\nDices still in game: ')
-    display_list(dices)
-
-    return dices
+# Name of our
+FILENAME = 'Student.dat'
 
 
 def main():
-    dices = make_list()
+    pets_of_students = load_animals()
 
-    print('\nHere is your dices')
-    display_list(dices)
+    choice = 0
 
-    print('\n##### ROUND ONE ########')
-    dices = play_round(dices)
+    while choice != QUIT:
 
-    print('\n###### Round TWO #######')
-    dices = play_round(dices)
+        choice = get_menu_choice()
 
-    print("\nAnd the winner is :")
-    display_list(dices)
+        if choice == LOOK_UP:
+            look_up(pets_of_students)
+        elif choice == ADD:
+            add(pets_of_students)
+        elif choice == DISPLAY:
+            display(pets_of_students)
+    save_animals(pets_of_students)
+
+
+def load_animals():
+    try:
+        input_file = open(FILENAME, 'rb')
+
+        animal_dct = pickle.load(input_file)
+        input_file.close()
+
+
+    except IOError:
+        animal_dct = {}
+    return animal_dct
+
+
+def get_menu_choice():
+    print()
+    print('Menu')
+    print('1 LOOKUP')
+    print('2 ADD')
+    print('3 Display')
+    print('4 QUIT')
+
+    choice = int(input('Enter your choice :'))
+
+    return choice
+
+
+def look_up(pets_of_students):
+    first_name = input('Enter a name: ')
+
+    print(pets_of_students.get(first_name, 'That name is not found'))
+
+
+def add(pets_of_students):
+    first_name = input('First name of student ')
+    last_name = input('Last name of student ')
+    student_id = int(input('Student id '))
+    mammal_of_student = input('Mammal of student ')
+
+    entry = students_mammals.Student(first_name, last_name, student_id, mammal_of_student)
+
+    if first_name not in pets_of_students:
+        pets_of_students[first_name] = entry
+        print('the entry has been added')
+    else:
+        print('That name already exists')
+
+
+def display(pets_of_students):
+    for first_name in pets_of_students:
+        print(pets_of_students.get(first_name))
+
+
+def save_animals(pets_of_students):
+    output_file = open(FILENAME, 'wb')
+
+    pickle.dump(pets_of_students, output_file)
+
+    output_file.close()
 
 
 main()

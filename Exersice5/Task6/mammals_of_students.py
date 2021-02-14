@@ -1,6 +1,6 @@
 # File: dice.py
 # Author: Matias Tieranta
-# Description: Direcotory named as Player including firstname, lastname and id and mammal
+# Description: Direcotory named as Student including firstname, lastname and id and mammal
 
 
 import students_mammals
@@ -13,9 +13,11 @@ ADD = 2
 DISPLAY = 3
 QUIT = 4
 
+# Name of our
 FILENAME = 'Student.dat'
 
 
+# Lets define main function and give value to menu
 def main():
     pets_of_students = load_animals()
 
@@ -34,6 +36,7 @@ def main():
     save_animals(pets_of_students)
 
 
+# Loads information from our directory
 def load_animals():
     try:
         input_file = open(FILENAME, 'rb')
@@ -47,6 +50,7 @@ def load_animals():
     return animal_dct
 
 
+# Desing our menu
 def get_menu_choice():
     print()
     print('Menu')
@@ -60,12 +64,14 @@ def get_menu_choice():
     return choice
 
 
+# Look up allready created data
 def look_up(pets_of_students):
     first_name = input('Enter a name: ')
 
     print(pets_of_students.get(first_name, 'That name is not found'))
 
 
+# Adds new data
 def add(pets_of_students):
     first_name = input('First name of student ')
     last_name = input('Last name of student ')
@@ -81,11 +87,13 @@ def add(pets_of_students):
         print('That name already exists')
 
 
+# Displays all data give to directory
 def display(pets_of_students):
     for first_name in pets_of_students:
         print(pets_of_students.get(first_name))
 
 
+# lets save changes
 def save_animals(pets_of_students):
     output_file = open(FILENAME, 'wb')
 
