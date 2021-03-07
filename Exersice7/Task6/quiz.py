@@ -29,7 +29,7 @@ for line in lines[:numOfQuestions]:
         wrong.append(question)
 
 
-# After 10 question tells points that user had
+# After 10 question tells points that user hadd
 else:
     numOfQuestions = 10
     print('You got %d question right' % (numRight))

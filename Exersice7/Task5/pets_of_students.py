@@ -1,3 +1,7 @@
+# File:         pets_of_students.py
+# Author:       Matias Tieranta
+# Description:  Demo how does inheritance work
+
 class Students:
 
     # The __init__ method initializes first name last name and id
