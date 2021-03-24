@@ -1,12 +1,13 @@
 # File: storage.py
 # Author: Matias Tieranta
-# Description: Class named as Student including firstname, lastname and id and mammals
+# Description: Class named as storage will provide method to return to stuff to future dictionary.
 
-# Creates class student, with given first name, last name, id and mammal
+# Creates class storage and inherit from it two different classes to be stored.
+
 
 class Storage:
-    def __init__(self, manufacturer, price, id):
-        self.__manufacturer = manufacturer
+    def __init__(self, name_of_product, price, id):
+        self.__name_of_product = name_of_product
         self.__price = price
         self.__id = id
 
@@ -18,11 +19,11 @@ class Storage:
     def set_id(self, id):
         self.__id = id
 
-    def get_manufacturer(self):
-        return self.__manufacturer
+    def get_name_of_product(self):
+        return self.__name_of_product
 
-    def set_manufacturer(self, manufacturer):
-        self.__manufacturer = manufacturer
+    def set_name_of_product(self, name_of_product):
+        self.__name_of_product = name_of_product
 
     def get_price(self):
         return self.__price
@@ -33,31 +34,33 @@ class Storage:
     # Returns string
     def __str__(self):
         return f'''id of item is :{self.__id}
-        \n manufacturer of product is :{self.__manufacturer} 
+        \n name of product is :{self.__name_of_product} 
         \n price of product is :{self.__price}'''
 
 
 class Electronics(Storage):
-    def __init__(self, manufacturer, price, id, category):
-        super().__init__(manufacturer, price, id)
+    def __init__(self, name_of_product, price, id, category):
+        super().__init__(name_of_product, price, id)
         self.__category = category
 
+    # Returns string
     def __str__(self):
-        return f'''id of item is :{self.get_id()}
-        \n manufacturer of product is :{self.get_manufacturer()} 
-        \n price of product is :{self.get_price()}
+        return f'''id of item is : {self.get_id()}
+        \n name of product is : {self.get_name_of_product()} 
+        \n price of product is : {self.get_price()}
         \n Category of product is : {self.__category}'''
 
 
 class Consumables(Storage):
-    def __init__(self, manufacturer, price, id, category):
-        super().__init__(manufacturer, price, id)
+    def __init__(self, name_of_product, price, id, category):
+        super().__init__(name_of_product, price, id)
         self.__category = category
 
+    # Returns stringAA
     def __str__(self):
-        return f'''id of item is :{self.get_id()}
-        \n Name of product is :{self.get_manufacturer()} 
-        \n price of product is :{self.get_price()}
+        return f'''\nid of item is : {self.get_id()}
+        \n Name of product is : {self.get_name_of_product()} 
+        \n price of product is : {self.get_price()}
         \n Category of product is : {self.__category}'''
 
 
