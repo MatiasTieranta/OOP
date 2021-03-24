@@ -64,8 +64,3 @@ class Consumables(Storage):
         \n Category of product is : {self.__category}'''
 
 
-tv = Electronics('Phillips 50" 4k tv', '499', '1', 'electronics')
-
-beefSteak = Consumables('Atria minuuttipihvi', '2,99euro', '2', 'Consumables')
-print(tv)
-print(beefSteak)

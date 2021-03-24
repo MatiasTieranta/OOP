@@ -84,8 +84,6 @@ def look_up(storage_of_shop):
     # Adds new data
 
 
-# name_of_product, price, id)
-
 def add(storage_of_shop):
     name_of_product = input('Give name of product')
     price = input('Price of Product ')
@@ -94,7 +92,7 @@ def add(storage_of_shop):
                          'if you want add product to Electronics press 2\n'
                          ': '))
     if category == 1:
-        entry = items_of_storage.Consumables(name_of_product, price, id,category)
+        entry = items_of_storage.Consumables(name_of_product, price, id, category)
     else:
         entry = items_of_storage.Electronics(name_of_product, price, id, category)
 
@@ -105,17 +103,24 @@ def add(storage_of_shop):
         print('That name already exists')
 
 
-# Displays all data give to directory
-def display(storage_of_shop):
-    for first_name in storage_of_shop:
-        print(storage_of_shop.get(name_of_product))
+def change(storage_of_shop):
+
+
 
 
 def delete(storage_of_shop):
-    id = int(input('Please give me a id of product you would like to remove'))
-    if storage_of_shop.get(id) is not None:
-        storage_of_shop.pop(id)
+    name_of_product = input('Please give me name of product you would like to remove')
+    if storage_of_shop.get(name_of_product) is not None:
+        storage_of_shop.pop(name_of_product)
         print('Done')
+    else:
+        print(storage_of_shop.get(name_of_product, 'That id is not found'))
+
+
+# Displays all data give to directory
+def display(storage_of_shop):
+    for name_of_product in storage_of_shop:
+        print(storage_of_shop.get(name_of_product))
 
 
 # lets save changes
