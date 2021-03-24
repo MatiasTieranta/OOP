@@ -77,9 +77,9 @@ def get_menu_choice():
 
 # Look up allready created data
 def look_up(storage_of_shop):
-    name = input('Enter a name: ')
+    name_of_product = input('Enter a name: ')
 
-    print(storage_of_shop.get(name, 'That name is not found'))
+    print(storage_of_shop.get(name_of_product, 'That name is not found'))
 
     # Adds new data
 
@@ -104,12 +104,26 @@ def add(storage_of_shop):
 
 
 def change(storage_of_shop):
+    name_of_original_product = input('Enter a name: ')
+    name_of_product = input('Give name of product')
+    price = input('Price of Product ')
+    id = int(input('id of product'))
+    category = int(input('If you want add product to Consumables press 1 \n'
+                         'if you want add product to Electronics press 2\n'
+                         ': '))
+    if category == 1:
+        entry = items_of_storage.Consumables(name_of_product, price, id, category)
+    else:
+        entry = items_of_storage.Electronics(name_of_product, price, id, category)
 
-
+    if name_of_original_product == storage_of_shop:
+        storage_of_shop[name_of_original_product] = entry
+    else:
+        print('There is no product to change')
 
 
 def delete(storage_of_shop):
-    name_of_product = input('Please give me name of product you would like to remove')
+    name_of_product = input('Please give me name of product you would like to remove :')
     if storage_of_shop.get(name_of_product) is not None:
         storage_of_shop.pop(name_of_product)
         print('Done')
