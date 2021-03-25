@@ -3,7 +3,8 @@
 # Description: Direcotory named as Student including firstname, lastname and id and mammal
 
 
-import items_of_storage
+import electronics
+import consumables
 import pickle
 
 # Lets crate menu
@@ -33,8 +34,6 @@ def main():
             look_up(storage_of_shop)
         elif choice == ADD_ITEM:
             add(storage_of_shop)
-        elif choice == CHANGE_ITEM:
-            change(storage_of_shop)
         elif choice == DELETE_ITEM:
             delete(storage_of_shop)
         elif choice == DISPLAY_ALL_ITEMS:
@@ -85,16 +84,23 @@ def look_up(storage_of_shop):
 
 
 def add(storage_of_shop):
-    name_of_product = input('Give name of product')
-    price = input('Price of Product ')
-    id = int(input('id of product'))
-    category = int(input('If you want add product to Consumables press 1 \n'
-                         'if you want add product to Electronics press 2\n'
+    category = int(input('if you want add product to Electronics press 1 \n'
+                         'If you want add product to Consumables press 2 \n'
                          ': '))
     if category == 1:
-        entry = items_of_storage.Consumables(name_of_product, price, id, category)
+        name_of_product = input('Give name of product :')
+        price = input('Price of Product :')
+        id = int(input('id of product :'))
+        size = input('give size of product :')
+
+        entry = electronics.Electronics(name_of_product, price, id, category, size)
     else:
-        entry = items_of_storage.Electronics(name_of_product, price, id, category)
+        name_of_product = input('Give name of product :')
+        price = input('Price of Product :')
+        id = int(input('id of product :'))
+        expiration = input('expiration date is :')
+        weight = input('Weigh of product : ')
+        entry = consumables.Consumables(name_of_product, price, id, category, expiration, weight)
 
     if name_of_product not in storage_of_shop:
         storage_of_shop[name_of_product] = entry
@@ -103,23 +109,7 @@ def add(storage_of_shop):
         print('That name already exists')
 
 
-def change(storage_of_shop):
-    name_of_original_product = input('Enter a name: ')
-    name_of_product = input('Give name of product')
-    price = input('Price of Product ')
-    id = int(input('id of product'))
-    category = int(input('If you want add product to Consumables press 1 \n'
-                         'if you want add product to Electronics press 2\n'
-                         ': '))
-    if category == 1:
-        entry = items_of_storage.Consumables(name_of_product, price, id, category)
-    else:
-        entry = items_of_storage.Electronics(name_of_product, price, id, category)
-
-    if name_of_original_product == storage_of_shop:
-        storage_of_shop[name_of_original_product] = entry
-    else:
-        print('There is no product to change')
+# def change(storage_of_shop):
 
 
 def delete(storage_of_shop):
