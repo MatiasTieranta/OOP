@@ -1,4 +1,4 @@
-class Storage:
+class Items:
     def __init__(self, name_of_product, price, id, category):
         self.__name_of_product = name_of_product
         self.__price = price

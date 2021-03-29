@@ -1,9 +1,9 @@
 import Items_of_shop
 
 
-class Electronics(Items_of_shop.Storage):
+class Electronics(Items_of_shop.Items):
     def __init__(self, name_of_product, price, id, category, size):
-        Items_of_shop.Storage.__init__(self, name_of_product, price, id, category)
+        Items_of_shop.Items.__init__(self, name_of_product, price, id, category)
 
         self.__size = size
 

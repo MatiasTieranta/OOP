@@ -1,7 +1,7 @@
 import Items_of_shop
 
 
-class Consumables(Items_of_shop.Storage):
+class Consumables(Items_of_shop.Items):
     def __init__(self, name_of_product, price, id, category, expiration, weight):
         super().__init__(name_of_product, price, id, category)
 
