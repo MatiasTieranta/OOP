@@ -1,4 +1,5 @@
 import sys
+from getpass import getpass
 
 
 class UserLogon():
@@ -9,7 +10,7 @@ class UserLogon():
 
     def password(self):
         correct_password = 'salasana123!'
-        user_password = input('Password: ')
+        user_password = getpass('Password: ')
         if user_password == correct_password:
             print('Correct welcome !')
         else:
@@ -23,4 +24,3 @@ def func(obj):
 
 obj_user_logon = UserLogon()
 func(obj_user_logon)
-
