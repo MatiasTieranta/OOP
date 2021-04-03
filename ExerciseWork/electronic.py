@@ -1,9 +1,13 @@
-import Items_of_shop
+# File:
+# Author:
+# Description:
+
+import item
 
 
-class Electronics(Items_of_shop.Items):
+class Electronic(item.Item):
     def __init__(self, name_of_product, price, id, category, size):
-        Items_of_shop.Items.__init__(self, name_of_product, price, id, category)
+        item.Item.__init__(self, name_of_product, price, id, category)
 
         self.__size = size
 
@@ -14,6 +18,6 @@ class Electronics(Items_of_shop.Items):
         return self.__size
 
     def __str__(self):
-        st = super(Electronics, self).__str__()
+        st = super(Electronic, self).__str__()
         st += '\n\nsize of product is: ' + str(self.__size)
         return st

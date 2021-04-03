@@ -1,4 +1,9 @@
-class Items:
+# File:
+# Author:
+# Description:
+
+
+class Item:
     def __init__(self, name_of_product, price, id, category):
         self.__name_of_product = name_of_product
         self.__price = price

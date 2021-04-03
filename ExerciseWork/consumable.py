@@ -1,7 +1,10 @@
-import Items_of_shop
+# File:
+# Author:
+# Description:
+import item
 
 
-class Consumables(Items_of_shop.Items):
+class Consumable(item.Item):
     def __init__(self, name_of_product, price, id, category, expiration, weight):
         super().__init__(name_of_product, price, id, category)
 
@@ -21,7 +24,7 @@ class Consumables(Items_of_shop.Items):
         self.expiration = expiration
 
     def __str__(self):
-        st = super(Consumables, self).__str__()
+        st = super(Consumable, self).__str__()
         st += '\n\nweight of product is: ' + str(self.weight) + '\n\nexpiration date of product is: ' + str(
             self.expiration)
         return st

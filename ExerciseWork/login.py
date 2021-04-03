@@ -1,3 +1,8 @@
+# File:
+# Author:
+# Description:
+
+
 import sys
 from getpass import getpass
 
@@ -7,16 +12,16 @@ def login():
     password()
 
 
+# Mockup for login
 def username():
-    user = input('Username: ')
-    print("Username", user)
+    input('Username: ')
 
 
 def password():
     correct_password = '1234'
     user_password = getpass('Password: ')
     if user_password == correct_password:
-        print('Correct welcome !')
+        print('Correct welcome!')
     else:
         print('Password wrong exiting...')
         sys.exit()
