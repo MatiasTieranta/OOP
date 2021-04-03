@@ -22,6 +22,6 @@ class Consumables(Items_of_shop.Items):
 
     def __str__(self):
         st = super(Consumables, self).__str__()
-        st += '\n weight of product is :' + str(self.weight) + '\n expiration date of product is :' + str(
+        st += '\n\nweight of product is: ' + str(self.weight) + '\n\nexpiration date of product is: ' + str(
             self.expiration)
         return st

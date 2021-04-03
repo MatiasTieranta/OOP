@@ -15,5 +15,5 @@ class Electronics(Items_of_shop.Items):
 
     def __str__(self):
         st = super(Electronics, self).__str__()
-        st += '\n size of product is :' + str(self.__size)
+        st += '\n\nsize of product is: ' + str(self.__size)
         return st

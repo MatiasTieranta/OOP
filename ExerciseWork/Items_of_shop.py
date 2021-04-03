@@ -33,7 +33,7 @@ class Items:
 
     # Returns string
     def __str__(self):
-        return f'''id of item is :{self.__id}
-        \n name of product is :{self.__name_of_product} 
-        \n price of product is :{self.__price}
-        \n category of product is: {self.__category}'''
+        return f'''id of item is: {self.__id}
+        \nname of product is: {self.__name_of_product} 
+        \nprice of product is: {self.__price}
+        \ncategory of product is: {self.__category}'''

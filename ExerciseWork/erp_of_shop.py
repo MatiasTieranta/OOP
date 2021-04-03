@@ -27,6 +27,7 @@ def main():
     choice = 0
 
     while choice != QUIT_ERP:
+        print('\n#####################################')
 
         choice = get_menu_choice()
 
@@ -34,6 +35,8 @@ def main():
             look_up(storage_of_shop)
         elif choice == ADD_ITEM:
             add(storage_of_shop)
+        elif choice == CHANGE_ITEM:
+            change(storage_of_shop)
         elif choice == DELETE_ITEM:
             delete(storage_of_shop)
         elif choice == DISPLAY_ALL_ITEMS:
@@ -48,7 +51,6 @@ def load_storage():
 
         storage_dct = pickle.load(input_file)
         input_file.close()
-
 
     except IOError:
         storage_dct = {}
@@ -66,10 +68,15 @@ def get_menu_choice():
     print('5 DISPLAY ALL ITEMS FROM STORAGE')
     print('6 QUIT')
 
-    choice = int(input('Enter your choice :'))
+    try:
+        choice = int(input('\nEnter your choice :'))
+    except ValueError:
+        print("It's not integer")
+        return 0
 
-    while choice < LOOK_UP or choice > QUIT_ERP:
-        choice = int(input('enter valid choice'))
+    if choice < LOOK_UP or choice > QUIT_ERP:
+        print('\nInvalid choice !')
+        return 0
 
     return choice
 
@@ -77,8 +84,14 @@ def get_menu_choice():
 # Look up allready created data
 def look_up(storage_of_shop):
     name_of_product = input('Enter a name: ')
+    product = storage_of_shop.get(name_of_product)
+    if product is None:
+        print('Name is not found')
+        return None
+    else:
 
-    print(storage_of_shop.get(name_of_product, 'That name is not found'))
+        print(product)
+        return product
 
     # Adds new data
 
@@ -109,7 +122,25 @@ def add(storage_of_shop):
         print('That name already exists')
 
 
-# def change(storage_of_shop):
+def change(storage_of_shop):
+    product = look_up(storage_of_shop)
+    if product is None:
+        return
+    if product.get_category() == 1:
+        price = input('Price of Product :')
+        id = int(input('id of product :'))
+        size = input('give size of product :')
+        entry = electronics.Electronics(product.get_name_of_product(), price, id, product.get_category(), size)
+    else:
+        price = input('Price of Product :')
+        id = int(input('id of product :'))
+        expiration = input('expiration date is :')
+        weight = input('Weigh of product : ')
+        entry = consumables.Consumables(product.get_name_of_product(), price, id, product.get_category(), expiration,
+                                        weight)
+
+    storage_of_shop[product.get_name_of_product()] = entry
+    print(entry)
 
 
 def delete(storage_of_shop):
@@ -124,6 +155,7 @@ def delete(storage_of_shop):
 # Displays all data give to directory
 def display(storage_of_shop):
     for name_of_product in storage_of_shop:
+        print('\n#####################################\n')
         print(storage_of_shop.get(name_of_product))
 
 
@@ -136,4 +168,5 @@ def save_items(storage_of_shop):
     output_file.close()
 
 
+Login.login()
 main()

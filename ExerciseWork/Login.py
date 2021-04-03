@@ -2,25 +2,21 @@ import sys
 from getpass import getpass
 
 
-class UserLogon():
-
-    def login(self):
-        username = input('Username: ')
-        print("Username", username)
-
-    def password(self):
-        correct_password = 'salasana123!'
-        user_password = getpass('Password: ')
-        if user_password == correct_password:
-            print('Correct welcome !')
-        else:
-            sys.exit()
+def login():
+    username()
+    password()
 
 
-def func(obj):
-    obj.login()
-    obj.password()
+def username():
+    user = input('Username: ')
+    print("Username", user)
 
 
-obj_user_logon = UserLogon()
-func(obj_user_logon)
+def password():
+    correct_password = '1234'
+    user_password = getpass('Password: ')
+    if user_password == correct_password:
+        print('Correct welcome !')
+    else:
+        print('Password wrong exiting...')
+        sys.exit()
