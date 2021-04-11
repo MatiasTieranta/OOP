@@ -1,10 +1,17 @@
-# File:
-# Author:
-# Description:
+# File: Consumables.py
+# Author:Matias Tieranta
+# Description: consumables is inheritance class from item
+
+
+# Imports item class to be inherited
 import item
 
 
 class Consumable(item.Item):
+
+    # The __init__ method accepts arguments for the
+    # Consumable name of product, price, id, category, expiration date and weight
+
     def __init__(self, name_of_product, price, id, category, expiration, weight):
         super().__init__(name_of_product, price, id, category)
 

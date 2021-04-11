@@ -1,9 +1,15 @@
-# File:
-# Author:
-# Description:
+# File: item.py
+# Author: Matias Tieranta
+# Description: This module includes base __init__ which we will inherit later
 
+# The Item class holds general data about to be used later
 
 class Item:
+
+    # the __init__ method accepts arguments for the
+    # name of product price id and category. It initializes
+    # the data attributes with these values
+
     def __init__(self, name_of_product, price, id, category):
         self.__name_of_product = name_of_product
         self.__price = price
