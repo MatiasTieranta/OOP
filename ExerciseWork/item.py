@@ -42,7 +42,7 @@ class Item:
     def set_category(self, category):
         self.__category = category
 
-    # Returns string
+    # The __str__ method returns a string indicating the objects state
     def __str__(self):
         return f'''id of item is: {self.__id}
         \nname of product is: {self.__name_of_product} 

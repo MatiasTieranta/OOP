@@ -30,7 +30,7 @@ class Electronic(item.Item):
     def get_size(self):
         return self.__size
 
-    # __str__ returns wanted string
+    # The __str__ method returns a string indicating the objects state
     def __str__(self):
         st = super(Electronic, self).__str__()
         st += '\n\nsize of product is: ' + str(self.__size)
